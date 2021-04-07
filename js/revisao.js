@@ -6,7 +6,8 @@
 // Mostrar todas as alterações feitas.
 
 
-var pessoa = {
+var pessoa = 
+{
     nome: prompt("Digite seu nome:"),
     idade: prompt("Digite sua idade:"),
     sexo: prompt('Informe seu sexo: \nMasculino - M\nFeminino - F')
@@ -16,11 +17,13 @@ var alteracoes = [pessoa];
 
 fazerAlteracoes();
 
-for(var posicao in alteracoes){
+for(var posicao in alteracoes)
+{
 
     let chegueiNoFinalDoArray = (posicao == alteracoes.length - 1) ? true : false; //ternário
 
-    if(!chegueiNoFinalDoArray){
+    if(!chegueiNoFinalDoArray)
+    {
         
         let pessoaDeAntes = alteracoes[posicao];
         let pessoaDePosterior = alteracoes[parseInt(posicao) + 1]; 
@@ -31,18 +34,20 @@ for(var posicao in alteracoes){
 }
 
 
-function fazerAlteracoes(){
-    
+function fazerAlteracoes()
+{
     const quantidadeDeAlteracoes = 5;
     var contador = 0;
 
-    while(contador < quantidadeDeAlteracoes){
+    while(contador < quantidadeDeAlteracoes)
+    {
 
         let alterar = prompt("Deseja alterar alguma informação de pessoa? \nSim - S \nNão -N");
 
-        if(alterar.toLowerCase() == 's'){
-
-            pessoa = {
+        if(alterar.toLowerCase() == 's')
+        {
+            pessoa = 
+            {
                 nome: prompt("Digite seu nome."),
                 idade: prompt("Digite sua idade"),
                 sexo: prompt("Informe seu sexo \nM - Masculino\nF - Feminino")
@@ -52,15 +57,17 @@ function fazerAlteracoes(){
 
             contador++;
 
-        }else{
+        }
+        else
+        {
             contador = quantidadeDeAlteracoes;
         }
     }
 }
 
 
-function escreverNaTela(antes, depois){
-    
+function escreverNaTela(antes, depois)
+{
     document.write("<h1>Segue abaixo as alterações feitas na pessoa informada:</h1>");
 
     document.write(`<p>Antes da mudança:</p>`)
