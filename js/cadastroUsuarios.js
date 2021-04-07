@@ -1,1 +1,1 @@
-var cadastrosUsuarios = 0;
+var cadastroUsuarios = "0";
