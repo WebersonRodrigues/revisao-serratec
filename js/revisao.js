@@ -1,1 +1,2 @@
-document.write("Vamos revisar...")
+document.write("Vamos revisar... \\0/");
+
