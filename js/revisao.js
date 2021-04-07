@@ -1,37 +1,3 @@
-// document.write("Recursividade ... <br>");
-
-
-
-// function contador(numero){
-   
-//     for(var i = numero ; i >= 0; i--){
-//         document.write(i +  '<br>');
-//     }
-
-//     // document.write(numero +  '<br>');
-
-//     // if(numero > 0){
-//     //     contador(numero - 1);
-//     // }
-// }
-
-
-// contador(50);
-
-
-
-// Como usa
-// dispararAlerta();
-// dispararAlerta2("Aqui eu coloco a minha mensagem");
-// dispararAlerta2("Bombinha de chocolate");
-
-
-// var resultado = validarNumero('Batata');
-
-// var dataEHora = retornarDataEHoraAtual();
-
-// alert(dataEHora);
-
 
 // 2) - Crie um sistema que receba uma pessoa e salve todas as 
 // alterações que tiveram na pessoa. (nome, idade e sexo).
