@@ -1,37 +1,3 @@
-// document.write("Recursividade ... <br>");
-
-
-
-// function contador(numero){
-   
-//     for(var i = numero ; i >= 0; i--){
-//         document.write(i +  '<br>');
-//     }
-
-//     // document.write(numero +  '<br>');
-
-//     // if(numero > 0){
-//     //     contador(numero - 1);
-//     // }
-// }
-
-
-// contador(50);
-
-
-
-// Como usa
-// dispararAlerta();
-// dispararAlerta2("Aqui eu coloco a minha mensagem");
-// dispararAlerta2("Bombinha de chocolate");
-
-
-// var resultado = validarNumero('Batata');
-
-// var dataEHora = retornarDataEHoraAtual();
-
-// alert(dataEHora);
-
 
 // 2) - Crie um sistema que receba uma pessoa e salve todas as 
 // alterações que tiveram na pessoa. (nome, idade e sexo).
@@ -40,72 +6,70 @@
 // Mostrar todas as alterações feitas.
 
 
-var pessoa = {
-    nome: prompt("Digite seu nome."),
-    idade: prompt('Digite sua idade'),
-    sexo: prompt('Informe seu sexo \nM - Masculino\nF - Feminino')
+var pessoa = 
+{
+    nome: prompt("Digite seu nome:"),
+    idade: prompt("Digite sua idade:"),
+    sexo: prompt('Informe seu sexo: \nMasculino - M\nFeminino - F')
 };
 
 var alteracoes = [pessoa];
 
 fazerAlteracoes();
 
-for(var posicao in alteracoes){
-
-    let chegueiNoFinalDoArray = (posicao == alteracoes.length - 1) ? true : false;
-
-    if(!chegueiNoFinalDoArray){
-        
-        let pessoaDeAntes = alteracoes[posicao];
-        let pessoaDePosterior = alteracoes[parseInt(posicao) + 1]; 
-
-        escreverNaTela(pessoaDeAntes, pessoaDePosterior);
+for(var posicao in alteracoes)
+{
+    // let chegueiNoFinalDoArray = (posicao == alteracoes.length - 1) ? true : false; //ternário
+    // if(!chegueiNoFinalDoArray)
+    // {
+    //     let pessoaDeAntes = alteracoes[posicao];
+    //     let pessoaDePosterior = alteracoes[parseInt(posicao) + 1]; 
+    //     escreverNaTela(pessoaDeAntes, pessoaDePosterior);
+    // }
+    if(posicao < (alteracoes.length - 1))
+    {
+        let pessoaAntes = alteracoes[posicao];
+        let pessoaPosterior = alteracoes[parseInt(posicao) + 1]; //"versão sem ternário"
+        escreverNaTela(pessoaAntes, pessoaPosterior);
     }
-
 }
-
-
-function fazerAlteracoes(){
-    
-    const quantidadeDeVezes = 5;
+function fazerAlteracoes()
+{
+    const quantidadeDeAlteracoes = 5;
     var contador = 0;
-
-    while(contador < quantidadeDeVezes){
-
-        let alterar = prompt('Deseja alterar alguma informação na pessoa? \nS - Sim \nN -Não');
-
-        if(alterar.toLowerCase() == 's'){
-
-            pessoa = {
+    while(contador < quantidadeDeAlteracoes)
+    {
+        let alterar = prompt("Deseja alterar alguma informação de pessoa? \nSim - S \nNão -N");
+        if(alterar.toLowerCase() == 's')
+        {
+            pessoa = 
+            {
                 nome: prompt("Digite seu nome."),
-                idade: prompt('Digite sua idade'),
-                sexo: prompt('Informe seu sexo \nM - Masculino\nF - Feminino')
+                idade: prompt("Digite sua idade"),
+                sexo: prompt("Informe seu sexo \nM - Masculino\nF - Feminino")
             };
-
             alteracoes.push(pessoa);
-
             contador++;
-
-        }else{
-            contador = 5;
+        }
+        else
+        {
+            contador = quantidadeDeAlteracoes;
         }
     }
 }
-
-
-function escreverNaTela(antes, depois){
-    
+function escreverNaTela(antes, depois)
+{
     document.write("<h1>Segue abaixo as alterações feitas na pessoa informada:</h1>");
 
     document.write(`<p>Antes da mudança:</p>`)
-    document.write(`<p>Nome:<strong>${antes.nome}</strong></p>`);
-    document.write(`<p>Idade:<strong>${antes.idade}</strong></p>`);
-    document.write(`<p>Sexo:<strong>${antes.sexo}</strong> </p>`);
+    document.write(`<p>Nome: <strong>${antes.nome}</strong></p>`);
+    document.write(`<p>Idade: <strong>${antes.idade}</strong></p>`);
+    document.write(`<p>Sexo: <strong>${antes.sexo}</strong> </p>`);
 
     document.write(`<p>Depois da mudança:</p>`)
-    document.write(`<p>Nome:<strong>${depois.nome}</strong></p>`);
-    document.write(`<p>Idade:<strong>${depois.idade}</strong></p>`);
-    document.write(`<p>Sexo:<strong>${depois.sexo}</strong></p>`);
+    document.write(`<p>Nome: <strong>${depois.nome}</strong></p>`);
+    document.write(`<p>Idade: <strong>${depois.idade}</strong></p>`);
+    document.write(`<p>Sexo: <strong>${depois.sexo}</strong></p>`);
 }
 
 
