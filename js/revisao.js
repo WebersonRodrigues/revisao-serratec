@@ -19,12 +19,18 @@ fazerAlteracoes();
 
 for(var posicao in alteracoes)
 {
-    let chegueiNoFinalDoArray = (posicao == alteracoes.length - 1) ? true : false; //ternário
-    if(!chegueiNoFinalDoArray)
+    // let chegueiNoFinalDoArray = (posicao == alteracoes.length - 1) ? true : false; //ternário
+    // if(!chegueiNoFinalDoArray)
+    // {
+    //     let pessoaDeAntes = alteracoes[posicao];
+    //     let pessoaDePosterior = alteracoes[parseInt(posicao) + 1]; 
+    //     escreverNaTela(pessoaDeAntes, pessoaDePosterior);
+    // }
+    if(posicao < (alteracoes.length - 1))
     {
-        let pessoaDeAntes = alteracoes[posicao];
-        let pessoaDePosterior = alteracoes[parseInt(posicao) + 1]; 
-        escreverNaTela(pessoaDeAntes, pessoaDePosterior);
+        let pessoaAntes = alteracoes[posicao];
+        let pessoaPosterior = alteracoes[parseInt(posicao) + 1]; //"versão sem ternário"
+        escreverNaTela(pessoaAntes, pessoaPosterior);
     }
 }
 function fazerAlteracoes()
