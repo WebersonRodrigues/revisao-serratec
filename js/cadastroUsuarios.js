@@ -1,0 +1,1 @@
+var cadastrosUsuarios = 0;
