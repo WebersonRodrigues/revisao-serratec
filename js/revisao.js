@@ -19,31 +19,21 @@ fazerAlteracoes();
 
 for(var posicao in alteracoes)
 {
-
     let chegueiNoFinalDoArray = (posicao == alteracoes.length - 1) ? true : false; //ternário
-
     if(!chegueiNoFinalDoArray)
     {
-        
         let pessoaDeAntes = alteracoes[posicao];
         let pessoaDePosterior = alteracoes[parseInt(posicao) + 1]; 
-
         escreverNaTela(pessoaDeAntes, pessoaDePosterior);
     }
-
 }
-
-
 function fazerAlteracoes()
 {
     const quantidadeDeAlteracoes = 5;
     var contador = 0;
-
     while(contador < quantidadeDeAlteracoes)
     {
-
         let alterar = prompt("Deseja alterar alguma informação de pessoa? \nSim - S \nNão -N");
-
         if(alterar.toLowerCase() == 's')
         {
             pessoa = 
@@ -52,11 +42,8 @@ function fazerAlteracoes()
                 idade: prompt("Digite sua idade"),
                 sexo: prompt("Informe seu sexo \nM - Masculino\nF - Feminino")
             };
-
             alteracoes.push(pessoa);
-
             contador++;
-
         }
         else
         {
@@ -64,8 +51,6 @@ function fazerAlteracoes()
         }
     }
 }
-
-
 function escreverNaTela(antes, depois)
 {
     document.write("<h1>Segue abaixo as alterações feitas na pessoa informada:</h1>");
